@@ -20,7 +20,7 @@ namespace EntryShop.Data
             var clients = new Client[]
             {
                 new Client{ FirstName="Kamila", LastName="Scerbakova", Email="kamila_shc@inbox.lv", Birthdate=new DateTime(1998, 3, 26), Gender=Gender.Female},
-                new Client{ FirstName="Edwina", LastName="Sharma", Email="edwina_sharma@gmail.com", Birthdate=new DateTime(1996, 5, 25), Gender=Gender.Female}
+                new Client{ FirstName="Edgars", LastName="Egle", Email="edgars_egle@gmail.com", Birthdate=new DateTime(1996, 5, 25), Gender=Gender.Male}
             };
 
             foreach (Client i in clients)
