@@ -16,6 +16,7 @@ namespace EntryShop.Models
 
         [DataType(DataType.Currency)]
         [Required]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Only positive number allowed.")]
         public decimal Price { get; set; }
     }
 }

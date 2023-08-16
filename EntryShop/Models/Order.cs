@@ -21,6 +21,7 @@ namespace EntryShop.Models
         public Product? Product { get; set; }
 
         [Required]
+        [Range(1, int.MaxValue, ErrorMessage = "Only positive number allowed.")]
         public int Quantity { get; set; }
 
         [Display(Name="Price Total")]
