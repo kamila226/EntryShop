@@ -1,0 +1,65 @@
+﻿@model List<EntryShop.Models.ViewModelsProjection.OrderData>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Order List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Client)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Product.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].TotalPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
