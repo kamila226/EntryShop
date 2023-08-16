@@ -6,8 +6,14 @@ namespace EntryShop.Models.ViewModelsProjection
     {
         [Display(Name = "Client ID")]
         public int ID { get; set; }
+
+        [Display(Name = "First Name")]
         public string? FirstName { get; set; }
+
+        [Display(Name = "Last Name")]
         public string? LastName { get; set; }
+
+        [Display(Name = "E-mail")]
         public string? Email { get; set; }
 
         [DataType(DataType.Date)]
@@ -31,12 +37,19 @@ namespace EntryShop.Models.ViewModelsProjection
         {
             get
             {
-                decimal totalSum = 0;
-                foreach (var o in Orders)
+                if (OrderQnt > 0)
                 {
-                    totalSum += o.TotalPrice;
+                    decimal totalSum = 0;
+                    foreach (var o in Orders)
+                    {
+                        totalSum += o.TotalPrice;
+                    }
+                    return totalSum / OrderQnt;
+                } else
+                {
+                    return 0;
                 }
-                return totalSum / OrderQnt;
+                
             }
         }
     }
