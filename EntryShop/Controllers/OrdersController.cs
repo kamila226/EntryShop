@@ -104,7 +104,7 @@ namespace EntryShop.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClientID"] = new SelectList(_context.Clients, "ID", "ID", order.ClientID);
+            PopulateDropDownLists();
             return View(order);
         }
 
@@ -157,6 +157,7 @@ namespace EntryShop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            PopulateDropDownLists();
             return View(order);
         }
 

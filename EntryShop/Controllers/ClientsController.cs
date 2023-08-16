@@ -148,6 +148,7 @@ namespace EntryShop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            PopulateGenderDropDownList();
             return View(client);
         }
 

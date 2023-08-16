@@ -36,7 +36,7 @@ namespace EntryShop.Models.ViewModelsProjection
                 {
                     totalSum += o.TotalPrice;
                 }
-                return totalSum;
+                return totalSum / OrderQnt;
             }
         }
     }
